@@ -1,22 +1,20 @@
 import React, { useState, useEffect, Suspense } from 'react'
 import { Route, Redirect } from 'react-router'
 import Layout from './../components/layouts/Layout'
-import { routeLinks, TIMEOUT_BEFORE_REDIRECTING } from '../config/public-variables'
+import { routeLinks } from '../config/public-variables'
 import { useSelector, useDispatch } from 'react-redux';
 import Http from "./../config/httpService";
 import { SET_TOKEN, SET_USER } from "./../config/types";
-import { isAuthenticated, getAccessToken, setNewPath } from '../helpers/cookies';
-import Preloader from '../components/layouts/Preloader';
+import { getAccessToken, setNewPath } from '../helpers/cookies';
+
 const RestrictedRouter = ({ path, component: Component, ...res }) => {
-    console.log('path :', path);
     const dispatch = useDispatch()
     const { userReducer } = useSelector(state => state);
-    const [isUserLoggedIn, setIsUserLoggedIn] = useState(userReducer.isLoggedIn)
+    const [isUserLoggedIn, setIsUserLoggedIn] = useState(getAccessToken())
 
     useEffect(() => {
         try {
             if (getAccessToken() !== undefined && getAccessToken() !== '') {
-                console.log('getAccessToken() :', getAccessToken());
 
                 (async () => {
                     const config = {

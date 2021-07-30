@@ -60,7 +60,11 @@ class Sidenavigation extends Component {
                         {/* /Dashboard */}
                         {/* categories */}
                         <li className="menu-item">
-                            <Link to="/mani-categories"> <span><i className="fas fa-clipboard-list fs-16" />Main Category</span>
+                            <Link to="/main_categories"> <span><i className="fas fa-clipboard-list fs-16" />Main Category</span>
+                            </Link>
+                        </li >
+                        <li className="menu-item">
+                            <Link to="/languages_page"> <span><i className="fas fa-language fs-16" />Languages</span>
                             </Link>
                         </li >
                         {/* category end */}

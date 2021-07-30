@@ -64,6 +64,9 @@ export const routeLinks = {
     stockManagement: 'stock-management',
     userProfile: 'user-profile',
     webAnalytics: 'web-analytics',
+    mainCategoriesForm: 'main_categories/add',
+    editMainCategoriesForm: 'main_categories/edit/',
+    languages: 'languages_page'
 };
 
 export const API_BASE_URL = "https://app.halalzz.tk/api/";

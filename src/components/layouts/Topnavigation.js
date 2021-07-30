@@ -32,9 +32,9 @@ const Topnavigation = () => {
         }
     }
 
-    useEffect(() => {
-        console.log(userReducer);
-    }, [])
+    // useEffect(() => {
+    //     console.log(userReducer);
+    // }, [])
     return (
         <nav className="navbar ms-navbar">
             <div className="ms-aside-toggler ms-toggler pl-0" onClick={addsidenavigation}>

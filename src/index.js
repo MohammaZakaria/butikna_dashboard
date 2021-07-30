@@ -15,6 +15,8 @@ import './assets/vendors/iconic-fonts/cryptocoins/cryptocoins.css';
 import './assets/vendors/iconic-fonts/cryptocoins/cryptocoins-colors.css';
 import './assets/css/animate.min.css';
 import './assets/css/style.css';
+import './assets/css/custom-styling.css';
+
 
 const store = createStore(reducers)
 

@@ -8,7 +8,7 @@ class Content extends Component {
             <div className="ms-content-wrapper">
                 <div className="row">
                     <div className="col-md-12">
-                        <Breadcrumb/>
+                        <Breadcrumb />
                     </div>
                     <div className="col-md-6">
                         <div className="ms-panel">
@@ -336,19 +336,19 @@ class Content extends Component {
                                     </div>
                                     <div className="input-group">
 
-                                            <Dropdown className="input-group-prepend">
-                                                <Dropdown.Toggle variant="primary" className="btn-sm" id="dropdown-basic">
+                                        <Dropdown className="input-group-prepend">
+                                            <Dropdown.Toggle variant="primary" className="btn-sm" id="dropdown-basic">
                                                 Dropdown
-                                                </Dropdown.Toggle>
+                                            </Dropdown.Toggle>
 
-                                                <Dropdown.Menu>
-                                                    <Dropdown.Item href="#">Action</Dropdown.Item>
-                                                    <Dropdown.Item href="#">Another action</Dropdown.Item>
-                                                    <Dropdown.Item href="#">Something else here</Dropdown.Item>
-                                                    <Dropdown.Divider />
-                                                    <Dropdown.Item href="#/">Separated link</Dropdown.Item>
-                                                </Dropdown.Menu>
-                                            </Dropdown>
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item href="#">Action</Dropdown.Item>
+                                                <Dropdown.Item href="#">Another action</Dropdown.Item>
+                                                <Dropdown.Item href="#">Something else here</Dropdown.Item>
+                                                <Dropdown.Divider />
+                                                <Dropdown.Item href="#/">Separated link</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
                                         <input type="text" className="form-control" aria-label="Text input with dropdown button" />
                                     </div>
                                     <div className="custom-file">

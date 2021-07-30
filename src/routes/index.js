@@ -67,10 +67,21 @@ import Portfolio from './../components/pages/Portfolio';
 import Stockmanagement from './../components/pages/Stockmanagement';
 import Userprofile from './../components/pages/Userprofile';
 import Webanalytics from './../components/pages/Webanalytics';
+import LanguagesPage from './../components/pages/LanguagesPage';
 import Categories from './../components/pages/Categories';
+
 
 import RestrictedRouter from './RestrictedRouter'
 import history from './../history'
+
+
+
+
+// elements
+
+import CategoryForm from '../components/sections/Categories/Elements/CategoryForm';
+
+
 
 function AppRouter() {
 
@@ -81,75 +92,81 @@ function AppRouter() {
     <Router history={history}>
       <Preloader />
       <Switch>
-        <RestrictedRouter exact path="/" component={Dashboard} />
-        <RestrictedRouter path="/accordions" component={Accordions} />
-        <RestrictedRouter path="/add-product" component={Addproduct} />
-        <RestrictedRouter path="/alerts" component={Alerts} />
-        <RestrictedRouter path="/animations" component={Animations} />
-        <RestrictedRouter path="/badges" component={Badges} />
-        <RestrictedRouter path="/basic-tables" component={Basictables} />
-        <RestrictedRouter path="/breadcrumbs" component={Breadcrumbs} />
-        <RestrictedRouter path="/buttons" component={Buttons} />
-        <RestrictedRouter path="/cards" component={Cards} />
-        <RestrictedRouter path="/chartjs" component={Chartjs} />
-        <RestrictedRouter path="/chat" component={Chat} />
-        <RestrictedRouter path="/cropper" component={Cropper} />
-        <RestrictedRouter path="/customer-list" component={Customerlist} />
-        <RestrictedRouter path="/customer-review" component={Customerreview} />
-        <RestrictedRouter path="/data-tables" component={Datatables} />
-        <RestrictedRouter path="/draggables" component={Draggables} />
-        <RestrictedRouter path="/email" component={Email} />
-        <RestrictedRouter path="/flaticons" component={Flaticons} />
-        <RestrictedRouter path="/fontawesome" component={Fontawesome} />
-        <RestrictedRouter path="/form-elements" component={Formelements} />
-        <RestrictedRouter path="/form-layouts" component={Formlayouts} />
-        <RestrictedRouter path="/form-validation" component={Formvalidation} />
-        <RestrictedRouter path="/form-wizard" component={Formwizard} />
-        <RestrictedRouter path="/google-maps" component={Googlemaps} />
-        <RestrictedRouter path="/invoice-detail" component={Invoicedetail} />
-        <RestrictedRouter path="/invoice-list" component={Invoicelist} />
-        <RestrictedRouter path="/materialize" component={Materialize} />
-        <RestrictedRouter path="/menu-catalogue" component={Menucatalogue} />
-        <RestrictedRouter path="/menu-grid" component={Menugrid} />
-        <RestrictedRouter path="/menu-list" component={Menulist} />
-        <RestrictedRouter path="/modals" component={Modals} />
-        <RestrictedRouter path="/google-chart" component={Googlechart} />
-        <RestrictedRouter path="/orders" component={Orders} />
-        <RestrictedRouter path="/pagination" component={Pagination} />
-        <RestrictedRouter path="/preloaders" component={Preloaders} />
-        <RestrictedRouter path="/product-detail" component={Productdetail} />
-        <RestrictedRouter path="/progress-bars" component={Progressbars} />
-        <RestrictedRouter path="/range-slider" component={Rangeslider} />
-        <RestrictedRouter path="/rating" component={Rating} />
-        <RestrictedRouter path="/restaurant-list" component={Restaurantlist} />
-        <RestrictedRouter path="/sales" component={Sales} />
-        <RestrictedRouter path="/sliders" component={Sliders} />
-        <RestrictedRouter path="/social-activity" component={Socialactivity} />
-        <RestrictedRouter path="/sweet-alerts" component={Sweetalerts} />
-        <RestrictedRouter path="/tabs" component={Tabs} />
-        <RestrictedRouter path="/toast" component={Toast} />
-        <RestrictedRouter path="/todo-list" component={Todolist} />
-        <RestrictedRouter path="/tour" component={Tour} />
-        <RestrictedRouter path="/typography" component={Typography} />
-        <RestrictedRouter path="/vector-maps" component={Vectormaps} />
-        <RestrictedRouter path="/widgets" component={Widgets} />
-        <RestrictedRouter path="/client-management" component={Clientmanagement} />
-        <RestrictedRouter path="/faq" component={Faq} />
-        <RestrictedRouter path="/invoice" component={Invoice} />
-        <RestrictedRouter path="/lock-screen" component={Lockscreen} />
-        <RestrictedRouter path="/modal-register" component={Modalregister} />
-        <RestrictedRouter path="/portfolio" component={Portfolio} />
-        <RestrictedRouter path="/stock-management" component={Stockmanagement} />
-        <RestrictedRouter path="/user-profile" component={Userprofile} />
-        <RestrictedRouter path="/web-analytics" component={Webanalytics} />
-        <RestrictedRouter path="/mani-categories" component={Categories} />
+        <RestrictedRouter exact exact path="/" component={Dashboard} />
+        <RestrictedRouter exact path="/accordions" component={Accordions} />
+        <RestrictedRouter exact path="/add-product" component={Addproduct} />
+        <RestrictedRouter exact path="/alerts" component={Alerts} />
+        <RestrictedRouter exact path="/animations" component={Animations} />
+        <RestrictedRouter exact path="/badges" component={Badges} />
+        <RestrictedRouter exact path="/basic-tables" component={Basictables} />
+        <RestrictedRouter exact path="/breadcrumbs" component={Breadcrumbs} />
+        <RestrictedRouter exact path="/buttons" component={Buttons} />
+        <RestrictedRouter exact path="/cards" component={Cards} />
+        <RestrictedRouter exact path="/chartjs" component={Chartjs} />
+        <RestrictedRouter exact path="/chat" component={Chat} />
+        <RestrictedRouter exact path="/cropper" component={Cropper} />
+        <RestrictedRouter exact path="/customer-list" component={Customerlist} />
+        <RestrictedRouter exact path="/customer-review" component={Customerreview} />
+        <RestrictedRouter exact path="/data-tables" component={Datatables} />
+        <RestrictedRouter exact path="/draggables" component={Draggables} />
+        <RestrictedRouter exact path="/email" component={Email} />
+        <RestrictedRouter exact path="/flaticons" component={Flaticons} />
+        <RestrictedRouter exact path="/fontawesome" component={Fontawesome} />
+        <RestrictedRouter exact path="/form-elements" component={Formelements} />
+        <RestrictedRouter exact path="/form-layouts" component={Formlayouts} />
+        <RestrictedRouter exact path="/form-validation" component={Formvalidation} />
+        <RestrictedRouter exact path="/form-wizard" component={Formwizard} />
+        <RestrictedRouter exact path="/google-maps" component={Googlemaps} />
+        <RestrictedRouter exact path="/invoice-detail" component={Invoicedetail} />
+        <RestrictedRouter exact path="/invoice-list" component={Invoicelist} />
+        <RestrictedRouter exact path="/materialize" component={Materialize} />
+        <RestrictedRouter exact path="/menu-catalogue" component={Menucatalogue} />
+        <RestrictedRouter exact path="/menu-grid" component={Menugrid} />
+        <RestrictedRouter exact path="/menu-list" component={Menulist} />
+        <RestrictedRouter exact path="/modals" component={Modals} />
+        <RestrictedRouter exact path="/google-chart" component={Googlechart} />
+        <RestrictedRouter exact path="/orders" component={Orders} />
+        <RestrictedRouter exact path="/pagination" component={Pagination} />
+        <RestrictedRouter exact path="/preloaders" component={Preloaders} />
+        <RestrictedRouter exact path="/product-detail" component={Productdetail} />
+        <RestrictedRouter exact path="/progress-bars" component={Progressbars} />
+        <RestrictedRouter exact path="/range-slider" component={Rangeslider} />
+        <RestrictedRouter exact path="/rating" component={Rating} />
+        <RestrictedRouter exact path="/restaurant-list" component={Restaurantlist} />
+        <RestrictedRouter exact path="/sales" component={Sales} />
+        <RestrictedRouter exact path="/sliders" component={Sliders} />
+        <RestrictedRouter exact path="/social-activity" component={Socialactivity} />
+        <RestrictedRouter exact path="/sweet-alerts" component={Sweetalerts} />
+        <RestrictedRouter exact path="/tabs" component={Tabs} />
+        <RestrictedRouter exact path="/toast" component={Toast} />
+        <RestrictedRouter exact path="/todo-list" component={Todolist} />
+        <RestrictedRouter exact path="/tour" component={Tour} />
+        <RestrictedRouter exact path="/typography" component={Typography} />
+        <RestrictedRouter exact path="/vector-maps" component={Vectormaps} />
+        <RestrictedRouter exact path="/widgets" component={Widgets} />
+        <RestrictedRouter exact path="/client-management" component={Clientmanagement} />
+        <RestrictedRouter exact path="/faq" component={Faq} />
+        <RestrictedRouter exact path="/invoice" component={Invoice} />
+        <RestrictedRouter exact path="/lock-screen" component={Lockscreen} />
+        <RestrictedRouter exact path="/modal-register" component={Modalregister} />
+        <RestrictedRouter exact path="/portfolio" component={Portfolio} />
+        <RestrictedRouter exact path="/stock-management" component={Stockmanagement} />
+        <RestrictedRouter exact path="/user-profile" component={Userprofile} />
+        <RestrictedRouter exact path="/web-analytics" component={Webanalytics} />
+        <RestrictedRouter exact path="/languages_page" component={LanguagesPage} />
+        <RestrictedRouter exact path="/main_categories" component={Categories} />
 
-        <Route path="/default-register" component={Defaultregister} />
-        {/* <Route path="/modal-login" component={Modallogin} /> */}
-        <Route path="/coming-soon" component={Comingsoon} />
-        <Route path="/default-login" component={Defaultlogin} />
+        <Route exact path="/default-register" component={Defaultregister} />
+        {/* <Route exact path="/modal-login" component={Modallogin} /> */}
+        <Route exact path="/coming-soon" component={Comingsoon} />
+        <Route exact path="/default-login" component={Defaultlogin} />
+
+        {/* forms  */}
+        <RestrictedRouter exact path="/main_categories/add" component={CategoryForm} />
+        <RestrictedRouter exact path="/main_categories/edit/:id" component={CategoryForm} />
+
+        {/* end forms */}
         <Route component={Error} />
-
       </Switch>
     </Router>
   );

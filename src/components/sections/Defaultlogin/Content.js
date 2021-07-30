@@ -60,11 +60,10 @@ const Content = () => {
     //     }
     // }
 
-    const t = 'C1wstjfAOMIkrHpFXffFRqEDM6981upevfoQJA8osi9n7wYqsNUgJ187sSjJ'
-
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
+            console.log(formInputs);
             if (formInputs.email && formInputs.password) {
                 // const res = await Http.post('auth/register', { name: 'Developer', email: 'zak.dev@butikna.se', password: '123456' })
                 // const res = await Http.get(`auth/register/activate/${t}`)

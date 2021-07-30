@@ -2,26 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { useAlert } from 'react-alert';
 import { Link } from 'react-router-dom';
 import { routeLinks } from '../../../config/public-variables';
-import Http from './../../../config/httpService'
-import { categoriesInitialState } from './../../../config/initStates'
+import Http from '../../../config/httpService'
+import { languagesInitialState } from '../../../config/initStates'
 
-const CategoryTable = () => {
-    const [categories, setCategories] = useState([categoriesInitialState])
+const LanguagesTable = () => {
+    const [lang, setLang] = useState([languagesInitialState])
     const [loading, setLoading] = useState(false)
     const alert = useAlert()
     useEffect(() => {
         (async () => {
             try {
                 setLoading(true)
-                const res = await Http.get(`/main_categories`, {
-                    params: {
-                        lang_id: '1'
-                    }
-                })
+                const res = await Http.get(`/languages`)
                 const { data } = res
                 console.log('data :', data.message);
                 if (data.responseNumber === 201) {
-                    setCategories(data.message)
+                    setLang(data.message)
                 }
                 setLoading(false)
             } catch (error) {
@@ -50,34 +46,30 @@ const CategoryTable = () => {
                         <table className="table table-hover thead-primary">
                             <thead>
                                 <tr>
-                                    <th scope="col">Category ID</th>
-                                    <th scope="col">Category Name</th>
-                                    <th scope="col">Category description</th>
-                                    <th scope="col">Language</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Direction</th>
+                                    <th scope="col">Abbr</th>
                                     {/* <th scope="col">Price</th> */}
-                                    <th scope="col">Cover id</th>
-                                    <th scope="col">Image id</th>
+                                    <th scope="col">Flag</th>
                                     <th scope="col">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {categories.length > 0 ?
-                                    categories.map((cat, index) => {
+                                {lang.length > 0 ?
+                                    lang.map((l, index) => {
                                         return (
-                                            <tr key={index} key={cat.id}>
-                                                <th scope="row">{cat.id}</th>
-                                                <td>{cat.name}</td>
-                                                <td> {cat.description}</td>
+                                            <tr key={index} key={l.id}>
+                                                <td>{l.name}</td>
+                                                <td> {l.direction}</td>
                                                 {/* <td> {cat.lang_id}</td> */}
-                                                <td><span className="badge badge-primary">{cat.lang_id}</span></td>
-                                                <td> <img src={cat.cover} alt="cover" /> </td>
-                                                <td> <img src={cat.image} alt="image" /> </td>
-                                                <td> <Link to={`${routeLinks.editMainCategoriesForm}${cat.id}`}>Edit</Link> </td>
+                                                <td><span className="badge badge-primary">{l.abbr}</span></td>
+                                                <td> <img src={l.flag} alt="flag" /> </td>
+                                                <td> <Link to={`${routeLinks.editMainCategoriesForm}${l.id}`}>Edit</Link> </td>
                                             </tr>
                                         )
                                     })
                                     :
-                                    'Add new category pleas'}
+                                    'Add new category please'}
                                 {/* <tr>
                                         <th scope="row">2</th>
                                         <td>Mango Pie</td>
@@ -115,4 +107,4 @@ const CategoryTable = () => {
     );
 }
 
-export default CategoryTable;
+export default LanguagesTable;

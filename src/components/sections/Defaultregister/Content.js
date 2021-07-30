@@ -4,11 +4,13 @@ import Http from './../../../config/httpService'
 import history from '../../../history';
 import { getLastPath } from './../../../helpers/cookies'
 import { useAlert } from 'react-alert'
+import { routeLinks } from '../../../config/public-variables';
 
 
 const Content = () => {
     const [formInputs, setFormInputs] = useState({})
     const alert = useAlert()
+
     useEffect(() => {
         //initialize datatable
         function formValidation() {
@@ -48,14 +50,14 @@ const Content = () => {
                     formInputs
                 )
                 // const res = await Http.get(`auth/register/activate/${t}`)
-                if (res.status === 200) {
+                if (res.data.responseNumber === 201) {
                     alert.show(`${res.data.message}`)
+                    history.push(routeLinks.defaultLogin)
 
                     // await setCookie('access_token', res.data.access_token)
                     // const auth = await authenticate(res.data.access_token)
                     // if (auth) {
                     // await dispatch({ type: SET_TOKEN, payload: res.data.access_token })
-                    // history.push(getLastPath())
                     // }
                 }
                 // TODO alert if something wrong

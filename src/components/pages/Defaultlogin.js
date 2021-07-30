@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Content from '../sections/Defaultlogin/Content';
 import { useHistory } from 'react-router-dom'
-import { routeLinks } from '../../config/public-variables';
-import { getAccessToken, getLastPath } from '../../helpers/cookies';
+import { getLastPath } from '../../helpers/cookies';
 
 const Defaultlogin = () => {
     const history = useHistory()
